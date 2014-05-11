@@ -1,0 +1,29 @@
+{
+  "name": "http-to-nsupdate",
+  "version": "0.0.0",
+  "description": "A http request entry point to handle nsupdate remotely via http reques",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "coffee --compile --output lib/ src/",
+    "start": "node lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eerrecart/http-to-nsupdate.git"
+  },
+  "keywords": [
+    "nsupdate",
+    "inadyn",
+    "ddns"
+  ],
+  "author": "eerrecart",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eerrecart/http-to-nsupdate/issues"
+  },
+  "homepage": "https://github.com/eerrecart/http-to-nsupdate",
+  "dependencies": {
+    "connect": "~2.14.5",
+    "coffee-script": "~1.7.1"
+  }
+}
