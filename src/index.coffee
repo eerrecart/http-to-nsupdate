@@ -41,7 +41,7 @@ app.use (req, res)->
   else
     nsupdate.run req.query.key, create_command(zone, req.connection.remoteAddress ), (error) -> 
       data = error || create_command(zone, req.connection.remoteAddress )
-
+  console.log(new Date() + '- activity: '+ data)
   res.end data
 
 console.log 'server http-to-nsupdate running on: '+ server.port
