@@ -23,6 +23,11 @@ app.use connect.query()
 
 app.use (req, res)->
   
+  send_data = (data) ->
+    console.log new Date() + '- activity: ' + data
+    res.end(data);
+  
+
   data = ''
   zone = zones[req.query.key]
 
@@ -38,11 +43,13 @@ app.use (req, res)->
   else if zone.admins.indexOf(req.user) is -1
     res.statusCode = 403
     data = "ERROR: Unauthorized user"
+  
+  if data
+    send_data data
   else
     nsupdate.run req.query.key, create_command(zone, req.connection.remoteAddress ), (error) -> 
       data = error || create_command(zone, req.connection.remoteAddress )
-  console.log(new Date() + '- activity: '+ data)
-  res.end data
-
-console.log 'server http-to-nsupdate running on: '+ server.port
+      send_data(data)
+  
 http.createServer(app).listen(server.port)
+console.log 'server http-to-nsupdate running on: '+ server.port
