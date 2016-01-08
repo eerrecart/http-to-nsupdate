@@ -1,7 +1,7 @@
 http-to-nsupdate
 ================
 
-A http request entry point to handle ``nsupdate`` tool remotely via http ``GET`` requests. Use-full to make a remote dns update from an reduced soft/hard device - like routers - where you don't have an ssh console, or a full web client.
+A http request entry point to handle ``nsupdate`` tool remotely via http ``GET`` requests. Usefull to make a remote dns update from an reduced soft/hard device - like routers - where you don't have an ssh console, or a full web client.
 
 The **nsupdate bash** ``vendor/nsupdate.js`` invoked from the web server, was taken from [nsupdate-proxy](https://github.com/unhosted/nsupdate-proxy) project **owned by** [unhosted](https://github.com/unhosted), thanks!
 
