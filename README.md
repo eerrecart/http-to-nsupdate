@@ -1,7 +1,7 @@
 http-to-nsupdate
 ================
 
-A http request entry point to handle ``nsupdate`` tool remotely via http ``GET`` requests. Useful to make a remote dns update from a reduced soft/hard device - like routers - where you don't have an ssh console, or a full web client.
+An http request entry point to handle ``nsupdate`` tool remotely via http ``GET`` requests. Useful to make a remote dns update from a reduced soft/hard device - like routers - where you don't have an ssh console or a full web client.
 
 The **nsupdate bash** ``vendor/nsupdate.js`` invoked from the web server, was taken from [nsupdate-proxy](https://github.com/unhosted/nsupdate-proxy) project **owned by** [unhosted](https://github.com/unhosted), thanks!
 
@@ -32,7 +32,7 @@ Installation
         admins    : [ 'user']
   ```
   * `` user : 'pass' `` your basic auth credentials.
-  * ``"askldhasjkldh=="`` the **TSIG keys** used on bind9 to allow updates on the zone: ``zone      : 'example.com.'``
+  * ``"askldhasjkldh=="`` the **TSIG keys** used by bind9 to allow updates on the zone: ``zone      : 'example.com.'``
   * ``hostname  : 'subdomain.example.com'`` subdomain to update.
   
 * run the ``index.coffee`` / ``index.js``
