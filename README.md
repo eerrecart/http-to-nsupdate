@@ -1,7 +1,7 @@
 http-to-nsupdate
 ================
 
-An http request entry point to handle ``nsupdate`` tool remotely via http ``GET`` requests. Useful to make a remote dns update from a reduced soft/hard device - like routers - where you don't have an ssh console or a full web client.
+An http request entry point to handle ``nsupdate`` tool remotely via http ``GET`` requests. Useful to make a remote dns update from a reduced soft/hard device - like routers - where you don't have a ssh console or a full web client.
 
 The **nsupdate bash** ``vendor/nsupdate.js`` invoked from the web server, was taken from [nsupdate-proxy](https://github.com/unhosted/nsupdate-proxy) project **owned by** [unhosted](https://github.com/unhosted), thanks!
 
@@ -32,7 +32,7 @@ Installation
         admins    : [ 'user']
   ```
   * `` user : 'pass' `` your basic auth credentials.
-  * ``"askldhasjkldh=="`` the **TSIG keys** used by bind9 to allow updates on the zone: ``zone      : 'example.com.'``
+  * ``"askldhasjkldh=="`` the **TSIG keys** used by bind9 to allow updates for the zone: ``zone      : 'example.com.'``
   * ``hostname  : 'subdomain.example.com'`` subdomain to update.
   
 * run the ``index.coffee`` / ``index.js``
@@ -40,9 +40,9 @@ Installation
 Test
 --
 * ``curl --user user:pass "http://your_web_host:8080/?key=key_name:key&hostname=subdomain.example.com"``
-    *  ``--user user:pass`` the basic auth credentials on ``config.coffee``
+    *  ``--user user:pass`` basic auth credentials on ``config.coffee``
     * key: the key name/ key value pair **URL ENCODED** i.e:
-        * if generated key is: ``Kexample.com.+127+24536.private `` the name is: ``example.com``
+        * if the generated key is: ``Kexample.com.+127+24536.private `` the name is: ``example.com``
         * combined with the key value: ``example.com:z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP+DGNKHfuwvY7kxvUdBeoGlODJ6+SfaPg==`` (remember to encode it).
     * hostname: ``subdomain.example.com`` host to update.
 
